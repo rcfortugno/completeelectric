@@ -5,14 +5,15 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="Complete Electric Motor Repair Ltd. - Expert motor repair services in Calgary.">
     <title>Complete Electric Motor Repair Ltd.</title>
-    <!-- First link the base styles -->
-    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
-    <!-- Then link your custom CSS -->
+    <!-- Fonts and Icons -->
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <!-- Your CSS -->
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-    <header>
+    <!-- Header -->
+    <header class="header">
         <div class="header-container">
             <div class="logo-container">
                 <img src="logo.jpg" alt="Complete Electric Motor Repair Ltd. Logo" class="logo">
@@ -29,30 +30,65 @@
                     <li><a href="#suppliers">Suppliers</a></li>
                     <li><a href="#contact">Contact</a></li>
                 </ul>
+                <button class="mobile-menu-btn">
+                    <i class="fas fa-bars"></i>
+                </button>
             </nav>
-            <!-- Add mobile menu button -->
-            <button class="mobile-menu-button">
-                <i class="fas fa-bars"></i>
-            </button>
         </div>
     </header>
 
+    <!-- Hero Section -->
     <section id="home" class="hero">
         <div class="hero-overlay">
             <h1 class="hero-title">Calgary's Premier Electric Motor Repair Specialists</h1>
-            <p class="hero-subtitle">Expert motor repair services trusted by industry leaders since 1986</p>
+            <p class="hero-subtitle">Trusted by Industry Leaders Since 1986</p>
             <div class="cta-buttons">
-                <a href="#contact" class="cta-button">Get Expert Help</a>
+                <a href="#contact" class="cta-button primary">Get Expert Help</a>
                 <a href="#services" class="cta-button secondary">Our Services</a>
             </div>
         </div>
-        <img src="peace_bridge.jpg" alt="Calgary Peace Bridge at Night" class="hero-image">
+        <img src="peace_bridge.jpg" alt="Calgary Peace Bridge" class="hero-image">
     </section>
 
-    <section id="services" class="services">
+    <!-- About Section -->
+    <section id="about" class="about section-padding">
         <div class="container">
-            <h2>Our Services</h2>
-            <div class="service-grid">
+            <h2 class="section-title">About Us</h2>
+            <div class="about-content">
+                <p>Welcome to Complete Electric Motor Repair Ltd. Established in 1986, we are a family-owned and operated business proudly serving Calgary and the surrounding areas. Our commitment to quality and exceptional service has made us a trusted partner for businesses and individuals alike.</p>
+                <p>At Complete Electric Motor Repair Ltd., we specialize in repairing electric motors of all kinds. From pumps and fans to heavy-duty industrial motors, our skilled technicians ensure the job is done right.</p>
+                
+                <div class="features-grid">
+                    <div class="feature-item">
+                        <i class="fas fa-history"></i>
+                        <h3>35+ Years Experience</h3>
+                        <p>Serving Calgary since 1986</p>
+                    </div>
+                    <div class="feature-item">
+                        <i class="fas fa-tools"></i>
+                        <h3>Expert Technicians</h3>
+                        <p>Skilled professionals</p>
+                    </div>
+                    <div class="feature-item">
+                        <i class="fas fa-clock"></i>
+                        <h3>24/7 Service</h3>
+                        <p>Emergency repairs available</p>
+                    </div>
+                    <div class="feature-item">
+                        <i class="fas fa-check-circle"></i>
+                        <h3>Quality Guaranteed</h3>
+                        <p>Satisfaction assured</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Services Section -->
+    <section id="services" class="services section-padding">
+        <div class="container">
+            <h2 class="section-title">Our Services</h2>
+            <div class="services-grid">
                 <div class="service-card">
                     <i class="fas fa-sync"></i>
                     <h3>Motor Rewinding</h3>
@@ -63,115 +99,133 @@
                         <li>Quality testing</li>
                     </ul>
                 </div>
-                <!-- Add more service cards -->
+                <div class="service-card">
+                    <i class="fas fa-cog"></i>
+                    <h3>Repair & Maintenance</h3>
+                    <p>Comprehensive repair services for electric motors of all sizes and applications.</p>
+                    <ul class="service-features">
+                        <li>Diagnostic testing</li>
+                        <li>Preventive maintenance</li>
+                        <li>Emergency repairs</li>
+                    </ul>
+                </div>
+                <div class="service-card">
+                    <i class="fas fa-industry"></i>
+                    <h3>Industrial Solutions</h3>
+                    <p>Specialized services for industrial motors with 24/7 emergency support.</p>
+                    <ul class="service-features">
+                        <li>On-site service</li>
+                        <li>Industrial motor repairs</li>
+                        <li>Custom solutions</li>
+                    </ul>
+                </div>
             </div>
         </div>
     </section>
 
-    <section id="suppliers" class="suppliers">
+    <!-- Suppliers Section -->
+    <section id="suppliers" class="suppliers section-padding">
         <div class="container">
-            <h2>Our Trusted Suppliers</h2>
-            <div class="supplier-logos">
+            <h2 class="section-title">Our Trusted Suppliers</h2>
+            <div class="suppliers-grid">
                 <div class="supplier-card">
-                    <img src="baldor_logo.png" alt="Baldor" class="supplier-logo">
+                    <img src="supplier_logos/baldor_logo.png" alt="Baldor">
                     <p>Authorized Distributor</p>
                 </div>
-                <div class="supplier-card">
-                    <img src="canarm_logo.png" alt="Canarm" class="supplier-logo">
-                    <p>Certified Partner</p>
-                </div>
-                <!-- Add more supplier cards -->
+                <!-- Add other supplier cards -->
             </div>
         </div>
     </section>
 
-    <!-- Add workshop gallery section -->
-    <section id="gallery" class="gallery">
+    <!-- Gallery Section -->
+    <section id="gallery" class="gallery section-padding">
         <div class="container">
-            <h2>Our Workshop</h2>
+            <h2 class="section-title">Our Facility</h2>
             <div class="gallery-grid">
-                <figure class="gallery-item">
-                    <img src="workshop1.jpg" alt="Motor Repair Process" class="gallery-image">
-                    <figcaption>Professional Motor Repair</figcaption>
-                </figure>
-                <!-- Add more gallery items -->
+                <div class="gallery-item">
+                    <img src="workshop1.jpg" alt="Workshop Image">
+                    <div class="gallery-overlay">
+                        <p>State-of-the-art Facility</p>
+                    </div>
+                </div>
+                <!-- Add other gallery items -->
             </div>
         </div>
     </section>
 
-    <section id="contact" class="contact">
+    <!-- Contact Section -->
+    <section id="contact" class="contact section-padding">
         <div class="container">
-            <h2>Contact Us</h2>
+            <h2 class="section-title">Contact Us</h2>
             <div class="contact-grid">
                 <div class="contact-info">
-                    <div class="contact-item">
+                    <div class="info-item">
                         <i class="fas fa-map-marker-alt"></i>
                         <div>
                             <h3>Location</h3>
-                            <p>#8, 3600 - 21st Street N.E.<br>Calgary, Alberta T2E 6V6</p>
+                            <p>#8, 3600 - 21st Street N.E.</p>
+                            <p>Calgary, Alberta T2E 6V6</p>
                         </div>
                     </div>
-                    <div class="contact-item">
+                    <div class="info-item">
                         <i class="fas fa-phone"></i>
                         <div>
                             <h3>Phone</h3>
                             <p>(403) 291-9337</p>
                         </div>
                     </div>
-                    <div class="contact-item">
+                    <div class="info-item">
                         <i class="fas fa-envelope"></i>
                         <div>
                             <h3>Email</h3>
                             <p>completeelectric@shaw.ca</p>
                         </div>
                     </div>
+                    <div class="info-item">
+                        <i class="fas fa-clock"></i>
+                        <div>
+                            <h3>Hours</h3>
+                            <p>Monday - Friday: 8:00 AM - 5:00 PM</p>
+                            <p>24/7 Emergency Service Available</p>
+                        </div>
+                    </div>
                 </div>
                 <form class="contact-form">
                     <div class="form-group">
                         <label for="name">Name:</label>
-                        <input type="text" id="name" name="name" required>
+                        <input type="text" id="name" required>
                     </div>
                     <div class="form-group">
                         <label for="email">Email:</label>
-                        <input type="email" id="email" name="email" required>
+                        <input type="email" id="email" required>
                     </div>
                     <div class="form-group">
                         <label for="message">Message:</label>
-                        <textarea id="message" name="message" rows="4" required></textarea>
+                        <textarea id="message" rows="4" required></textarea>
                     </div>
-                    <button type="submit" class="submit-button">Send Message</button>
+                    <button type="submit" class="submit-btn">Send Message</button>
                 </form>
             </div>
         </div>
     </section>
 
-    <footer>
-        <div class="footer-container">
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
             <div class="footer-content">
-                <div class="footer-section">
-                    <h3>Quick Links</h3>
-                    <ul>
-                        <li><a href="#home">Home</a></li>
-                        <li><a href="#services">Services</a></li>
-                        <li><a href="#about">About</a></li>
-                        <li><a href="#contact">Contact</a></li>
-                    </ul>
+                <p class="copyright">&copy; 2025 Complete Electric Motor Repair Ltd. All Rights Reserved.</p>
+                <div class="social-links">
+                    <a href="#" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+                    <a href="#" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
                 </div>
-                <div class="footer-section">
-                    <h3>Business Hours</h3>
-                    <p>Monday - Friday: 8:00 AM - 5:00 PM</p>
-                    <p>24/7 Emergency Service Available</p>
-                </div>
-            </div>
-            <div class="footer-bottom">
-                <p>&copy; 2025 Complete Electric Motor Repair Ltd. All Rights Reserved.</p>
+                <p class="tagline">Whatever your needs, Complete Electric Motor Repair Ltd. can help get the job done right.</p>
             </div>
         </div>
     </footer>
 
-    <!-- Add JavaScript for mobile menu -->
+    <!-- Mobile Menu Script -->
     <script>
-        document.querySelector('.mobile-menu-button').addEventListener('click', function() {
+        document.querySelector('.mobile-menu-btn').addEventListener('click', function() {
             document.querySelector('.nav-menu').classList.toggle('active');
         });
     </script>
