@@ -249,6 +249,25 @@
         </div>
     </section>
 
+<section id="reviews" class="reviews section-padding">
+    <div class="container">
+        <h2 class="section-title">What Our Customers Say</h2>
+        <div class="reviews-header">
+            <div class="rating-summary">
+                <!-- Overall rating will be inserted here -->
+                <div class="loading-spinner">Loading...</div>
+            </div>
+            <a href="https://g.page/r/CWKCgQZiXJOSEAI/review" target="_blank" class="cta-button primary">Write a Review</a>
+        </div>
+        <div class="reviews-grid" id="google-reviews">
+            <!-- Reviews will be loaded here -->
+        </div>
+        <div class="reviews-footer">
+            <a href="https://g.page/r/CWKCgQZiXJOSEAI" target="_blank" class="view-all">View All Reviews on Google →</a>
+        </div>
+    </div>
+</section>
+
     <!-- Footer -->
     <footer class="footer">
         <div class="container">
@@ -289,5 +308,11 @@
             });
         });
     </script>
+
+<!-- Google Places API -->
+<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDmNd7BU7YzMvTVpeb1D1Y4nAI97TfZhuI&libraries=places&callback=initMap" async defer></script>
+<script src="reviews.js"></script>
+
+
 </body>
 </html>
