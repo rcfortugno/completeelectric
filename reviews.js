@@ -22,12 +22,32 @@ function displayReviews(reviews, overallRating) {
     const ratingSummary = document.querySelector('.rating-summary');
     
     // Update overall rating
-    ratingSummary.innerHTML = `
-        <div class="rating-stars">
-            ${getStarRating(overallRating)}
-        </div>
-        <p>${overallRating.toFixed(1)} out of 5</p>
-    `;
+    function getStarRating(rating) {
+        const filledStars = Math.floor(rating); // Full stars
+        const hasPartialStar = rating % 1 !== 0; // Check for partial star
+        const partialWidth = (rating % 1) * 100; // Width percentage of partial star
+    
+        let starsHTML = '';
+    
+        // Add filled stars
+        for (let i = 0; i < filledStars; i++) {
+            starsHTML += '<span class="star filled"></span>';
+        }
+    
+        // Add partial star if applicable
+        if (hasPartialStar) {
+            starsHTML += `
+                <span class="star partial" style="background: linear-gradient(to right, #FFD700 ${partialWidth}%, #ddd ${partialWidth}%);"></span>
+            `;
+        }
+    
+        // Add empty stars
+        for (let i = filledStars + (hasPartialStar ? 1 : 0); i < 5; i++) {
+            starsHTML += '<span class="star"></span>';
+        }
+    
+        return starsHTML;
+    }
 
     // Display individual reviews
     container.innerHTML = reviews.map(review => `

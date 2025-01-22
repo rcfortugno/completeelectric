@@ -649,9 +649,25 @@ body {
 }
 
 .rating-stars {
-    color: #ffd700;
-    font-size: 2.5rem;
-    margin-bottom: 0.5rem;
+    display: inline-flex;
+    gap: 4px;
+}
+
+.star {
+    width: 20px;
+    height: 20px;
+    display: inline-block;
+    background-color: #ddd; /* Default empty star color */
+    clip-path: polygon(0 0, 100% 0, 100% 100%, 0% 100%);
+}
+
+.star.filled {
+    background-color: #FFD700; /* Fully filled star color */
+}
+
+.star.partial {
+    background: linear-gradient(to right, #FFD700 50%, #ddd 50%);
+    background-clip: content-box;
 }
 
 .reviews-grid {
