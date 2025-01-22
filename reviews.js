@@ -28,51 +28,46 @@ function displayReviews(reviews, overallRating) {
         <p>${overallRating.toFixed(1)} out of 5</p>
     `;
 
-    // Display individual reviews
-    container.innerHTML = reviews.map(review => `
-        <div class="review-card">
-            <div class="review-header">
-                <img 
-                    src="${review.profile_photo_url}" 
-                    alt="${review.author_name}"
-                    class="reviewer-image"
-                    onerror="this.src='images/default-avatar.png'"
-                >
-                <div class="reviewer-info">
-                    <h4>${review.author_name}</h4>
-                    <div class="review-rating">
-                        ${getStarRating(review.rating)}
-                    </div>
-                    <div class="review-date">${formatDate(review.time)}</div>
+// Display individual reviews
+container.innerHTML = reviews.map(review => `
+    <div class="review-card">
+        <div class="review-header">
+            <img 
+                src="${review.profile_photo_url || 'images/default-avatar.png'}" 
+                alt="${review.author_name}"
+                class="reviewer-image">
+            <div class="reviewer-info">
+                <h4>${review.author_name}</h4>
+                <div class="review-rating">
+                    ${getStarRating(review.rating)}
+                    <span class="review-rating-number">${review.rating.toFixed(1)} / 5</span>
                 </div>
+                <div class="review-date">${formatDate(review.time)}</div>
             </div>
-            <p class="review-text">${review.text || ''}</p>
         </div>
-    `).join('');
-}
+        <p class="review-text">${review.text || ''}</p>
+    </div>
+`).join('');
 
 function getStarRating(rating) {
     const filledStars = Math.floor(rating); // Full stars
-    const hasPartialStar = rating % 1 !== 0; // Partial star check
-    const partialWidth = (rating % 1) * 100; // Percentage for partial star
+    const hasPartialStar = rating % 1 !== 0; // Check for partial star
 
     let starsHTML = '';
 
     // Add filled stars
     for (let i = 0; i < filledStars; i++) {
-        starsHTML += '<span class="star filled"></span>';
+        starsHTML += '<i class="fas fa-star" style="color: #FFD700;"></i>';
     }
 
-    // Add partial star
+    // Add a half star if applicable
     if (hasPartialStar) {
-        starsHTML += `
-            <span class="star partial" style="background: linear-gradient(to right, #FFD700 ${partialWidth}%, #ddd ${partialWidth}%);"></span>
-        `;
+        starsHTML += '<i class="fas fa-star-half-alt" style="color: #FFD700;"></i>';
     }
 
-    // Add remaining empty stars
+    // Add empty stars
     for (let i = filledStars + (hasPartialStar ? 1 : 0); i < 5; i++) {
-        starsHTML += '<span class="star"></span>';
+        starsHTML += '<i class="far fa-star" style="color: #FFD700;"></i>';
     }
 
     return starsHTML;
