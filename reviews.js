@@ -1,8 +1,7 @@
-// Create a file called reviews.js
 function initMap() {
     const placeId = 'ChIJOSQ5B-RkcVMRYulwGYKCBlI'; // Your place ID
     const service = new google.maps.places.PlacesService(document.createElement('div'));
-    
+
     service.getDetails({
         placeId: placeId,
         fields: ['reviews', 'rating']
@@ -20,34 +19,14 @@ function initMap() {
 function displayReviews(reviews, overallRating) {
     const container = document.querySelector('#google-reviews');
     const ratingSummary = document.querySelector('.rating-summary');
-    
+
     // Update overall rating
-    function getStarRating(rating) {
-        const filledStars = Math.floor(rating); // Full stars
-        const hasPartialStar = rating % 1 !== 0; // Check for partial star
-        const partialWidth = (rating % 1) * 100; // Width percentage of partial star
-    
-        let starsHTML = '';
-    
-        // Add filled stars
-        for (let i = 0; i < filledStars; i++) {
-            starsHTML += '<span class="star filled"></span>';
-        }
-    
-        // Add partial star if applicable
-        if (hasPartialStar) {
-            starsHTML += `
-                <span class="star partial" style="background: linear-gradient(to right, #FFD700 ${partialWidth}%, #ddd ${partialWidth}%);"></span>
-            `;
-        }
-    
-        // Add empty stars
-        for (let i = filledStars + (hasPartialStar ? 1 : 0); i < 5; i++) {
-            starsHTML += '<span class="star"></span>';
-        }
-    
-        return starsHTML;
-    }
+    ratingSummary.innerHTML = `
+        <div class="rating-stars">
+            ${getStarRating(overallRating)}
+        </div>
+        <p>${overallRating.toFixed(1)} out of 5</p>
+    `;
 
     // Display individual reviews
     container.innerHTML = reviews.map(review => `
@@ -73,7 +52,30 @@ function displayReviews(reviews, overallRating) {
 }
 
 function getStarRating(rating) {
-    return '★'.repeat(Math.floor(rating)) + '☆'.repeat(5 - Math.floor(rating));
+    const filledStars = Math.floor(rating); // Full stars
+    const hasPartialStar = rating % 1 !== 0; // Partial star check
+    const partialWidth = (rating % 1) * 100; // Percentage for partial star
+
+    let starsHTML = '';
+
+    // Add filled stars
+    for (let i = 0; i < filledStars; i++) {
+        starsHTML += '<span class="star filled"></span>';
+    }
+
+    // Add partial star
+    if (hasPartialStar) {
+        starsHTML += `
+            <span class="star partial" style="background: linear-gradient(to right, #FFD700 ${partialWidth}%, #ddd ${partialWidth}%);"></span>
+        `;
+    }
+
+    // Add remaining empty stars
+    for (let i = filledStars + (hasPartialStar ? 1 : 0); i < 5; i++) {
+        starsHTML += '<span class="star"></span>';
+    }
+
+    return starsHTML;
 }
 
 function formatDate(timestamp) {
