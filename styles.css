@@ -41,13 +41,13 @@ body {
 
 /* Header Styles */
 .header {
-    background: linear-gradient(to right, var(--dark), #2c3e50);
+    background: linear-gradient(to right, #004aad, #003380);
     position: fixed;
     width: 100%;
     top: 0;
     z-index: 1000;
-    padding: 1rem 0;
-    box-shadow: var(--shadow);
+    padding: 0.5rem 0;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.1);
 }
 
 .header-container {
@@ -559,5 +559,73 @@ body {
 
     .info-item i {
         margin-bottom: 0.5rem;
+    }
+}
+
+/* Mobile Menu Styles */
+@media (max-width: 768px) {
+    .nav-menu {
+        display: none;
+        position: fixed;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        background: rgba(0, 74, 173, 0.98);
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        gap: 2rem;
+        padding: 2rem;
+        z-index: 1000;
+    }
+
+    .nav-menu.active {
+        display: flex;
+        animation: fadeIn 0.3s ease;
+    }
+
+    .nav-menu a {
+        font-size: 1.4rem;
+        padding: 1rem;
+        opacity: 0.9;
+    }
+
+    .nav-menu a:hover {
+        opacity: 1;
+    }
+
+    .mobile-menu-btn {
+        position: relative;
+        z-index: 1001;
+        padding: 0.5rem;
+    }
+
+    .logo-container {
+        padding: 0.5rem 0;
+    }
+
+    .logo {
+        height: 40px;
+    }
+
+    .company-name h1 {
+        font-size: 1.1rem;
+    }
+
+    .company-name p {
+        font-size: 0.8rem;
+    }
+}
+
+/* Animation for mobile menu */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(-10px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
     }
 }
