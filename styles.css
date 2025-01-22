@@ -141,13 +141,13 @@ body {
     left: 0;
     width: 100%;
     height: 100%;
-    background: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.7));
     display: flex;
     flex-direction: column;
-    justify-content: center;
-    align-items: center;
+    justify-content: center; /* Centers content vertically */
+    align-items: center; /* Centers content horizontally */
     text-align: center;
-    padding: 0 1rem;
+    padding: 2rem;
+    background: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.7));
     color: var(--white);
 }
 
@@ -165,26 +165,25 @@ body {
 
 .cta-buttons {
     display: flex;
-    gap: 1rem;
+    justify-content: center; /* Centers buttons horizontally */
+    align-items: center; /* Aligns buttons vertically */
+    gap: 1rem; /* Adds spacing between buttons */
+    margin-top: 2rem; /* Adds spacing above the buttons */
 }
 
 .cta-button {
     display: inline-block;
     padding: 1rem 2rem;
     border-radius: 5px;
-    text-decoration: none;
+    text-align: center; /* Centers text within the button */
     font-weight: bold;
     transition: var(--transition);
 }
 
 .cta-button.primary {
-    padding: 0.8rem 1.5rem;
-    font-size: 1rem;
-    border-radius: 5px;
     background-color: var(--primary);
     color: var(--white);
-    text-decoration: none;
-    transition: var(--transition);
+    border: none;
 }
 
 .cta-button.primary:hover {
@@ -195,6 +194,11 @@ body {
     background: transparent;
     border: 2px solid var(--white);
     color: var(--white);
+}
+
+.cta-button.secondary:hover {
+    border-color: var(--secondary);
+    color: var(--secondary);
 }
 
 /* About Section */
