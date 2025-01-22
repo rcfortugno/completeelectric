@@ -181,31 +181,10 @@ body {
     transition: var(--transition);
 }
 
-.cta-button.primary:hover {
-    background-color: var(--secondary);
-}
-
-.cta-button.secondary {
-    background: transparent;
-    border: 2px solid var(--white);
-    color: var(--white);
-}
-
-.cta-button.secondary:hover {
-    border-color: var(--secondary);
-    color: var(--secondary);
-};
-    border-radius: 5px;
-    text-align: center; /* Centers text within the button */
-    font-weight: bold;
-    transition: var(--transition);
-}
-
 .cta-button.primary {
     background-color: var(--primary);
     color: var(--white);
     border: none;
-    text-decoration: none; /* Removes underline */
 }
 
 .cta-button.primary:hover {
@@ -216,12 +195,13 @@ body {
     background: transparent;
     border: 2px solid var(--white);
     color: var(--white);
-    text-decoration: none; /* Removes underline */
+    text-decoration: none; /* Ensures no underline */
 }
 
 .cta-button.secondary:hover {
     border-color: var(--secondary);
     color: var(--secondary);
+    text-decoration: none; /* Ensures no underline on hover */
 }
 
 /* About Section */
