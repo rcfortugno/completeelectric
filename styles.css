@@ -780,3 +780,15 @@ body {
         margin: 0 1rem;
     }
 }
+.shop-front {
+    margin: 2rem 0;
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: var(--shadow);
+}
+
+.shop-image {
+    width: 100%;
+    height: auto;
+    display: block;
+}
